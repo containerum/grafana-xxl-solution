@@ -1,0 +1,24 @@
+{
+  "env": {
+    "GRAFANA_IMAGE": "monitoringartist/grafana-xxl",
+    "GRAFANA_PORT": "3000",
+    "GRAFANA_DEPLOY_NAME": "solution-grafana",
+    "GRAFANA_SVC_NAME": "solution-grafana-svc",
+    "GRAFANADATA": "/var/lib/grafana"
+  },
+  "compile":{
+     "GRAFANA_DEPLOY_HASH": "$RANDOM_5$",
+     "GRAFANA_SVC_HASH": "$RANDOM_5$",
+     "GRAFANA_PASSWORD": "$RANDOM_8$"
+  },
+  "run":[
+    {
+      "type": "deployment",
+      "config_file": "deploy-grafana.json"
+    },
+    {
+      "type": "service",
+      "config_file": "service-grafana.json"
+    }  
+  ]
+}

@@ -1,0 +1,21 @@
+{
+    "kind": "Service",
+    "metadata": {
+        "labels": {
+            "external": "true",
+            "${NS_HASH}": "${GRAFANA_DEPLOY_NAME}-${GRAFANA_DEPLOY_HASH}"
+        },
+        "name": "${GRAFANA_SVC_NAME}-${GRAFANA_SVC_HASH}"
+    },
+    "spec": {
+        "selector": {
+            "${NS_HASH}": "${GRAFANA_DEPLOY_NAME}-${GRAFANA_DEPLOY_HASH}"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+                "targetPort": ${GRAFANA_PORT}
+            }
+        ]
+    }
+}

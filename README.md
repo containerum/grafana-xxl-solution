@@ -1,1 +1,1 @@
-# solution-grafana-xxl
+# grafana-xxl-solution
