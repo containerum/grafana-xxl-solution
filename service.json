@@ -3,18 +3,18 @@
     "metadata": {
         "labels": {
             "external": "true",
-            "${NS_HASH}": "${GRAFANA_DEPLOY_NAME}-${GRAFANA_DEPLOY_HASH}"
+            "{{.NS_SELECTOR}}": "{{.NAME}}-{{.HASH}}"
         },
-        "name": "${GRAFANA_SVC_NAME}-${GRAFANA_SVC_HASH}"
+        "name": "{{.NAME}}-{{.HASH}}"
     },
     "spec": {
         "selector": {
-            "${NS_HASH}": "${GRAFANA_DEPLOY_NAME}-${GRAFANA_DEPLOY_HASH}"
+            "{{.NS_SELECTOR}}": "{{.NAME}}-{{.HASH}}"
         },
         "ports": [
             {
                 "protocol": "TCP",
-                "targetPort": ${GRAFANA_PORT}
+                "targetPort": {{.PORT}}
             }
         ]
     }

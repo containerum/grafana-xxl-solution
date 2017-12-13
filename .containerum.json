@@ -1,0 +1,24 @@
+{
+  "env": {
+    "IMAGE": "monitoringartist/grafana-xxl",
+    "PORT": "3000",
+    "DEPLOY_NAME": "solution-grafana",
+    "NAME": "solution-grafana",
+    "SVC_NAME": "solution-grafana-svc",
+    "DATA": "/var/lib/grafana",
+    "HASH": "{{rand_string 5}}",
+    "PASSWORD": "{{rand_string 8}}",
+    "CPU": "500m",
+    "RAM": "500Mi"
+  },
+  "run":[
+    {
+      "type": "deployment",
+      "config_file": "deploy.json"
+    },
+    {
+      "type": "service",
+      "config_file": "service.json"
+    }  
+  ]
+}
