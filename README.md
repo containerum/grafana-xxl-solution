@@ -33,7 +33,7 @@ $ chkit get deploy
 +-----------------------+------+-------------+------+-------+-----+
 | NAME                  | PODS | PODS ACTIVE | CPU  | RAM   | AGE |
 +-----------------------+------+-------------+------+-------+-----+
-| grafanasln-13k4y      | 1    | 1           | 500m | 500Mi | 22m |
+| grafanasln-s75fl      | 1    | 1           | 500m | 500Mi | 22m |
 +-----------------------+------+-------------+------+-------+-----+
 ```
 3. Using `chkit get` get the address and the port to access the running Solution:
@@ -43,11 +43,11 @@ $ chkit get svc
 +--------------------------+-----------------+----------+-------------------+---------------+-----+
 | NAME                     | CLUSTER-IP      | EXTERNAL | HOST              | PORT(S)       | AGE |
 +--------------------------+-----------------+----------+-------------------+---------------+-----+
-|  grafanasln-13k4y        | 10.105.25.198   | true     | x3.containerum.io | 33176:22/TCP  | 22m |
+|  grafanasln-s75fl        | 10.105.25.198   | true     | x3.containerum.io | 37834:3000/TCP| 22m |
 +--------------------------+-----------------+----------+-------------------+---------------+-----+
 
 ```
-4. Go to `x3.containerum.io:33176`, using the default username `admin` and the password you entered in step 1.
+4. Go to `x3.containerum.io:37834`, using the default username `admin` and the password you entered in step 1.
 
 5. Create a dashboard and add the metrics you want to track.
 
