@@ -1,49 +1,17 @@
 {
-  "kind": "Deployment",
-  "metadata": {
-    "name": "{{.NAME}}-{{.HASH}}"
-  },
-  "spec": {
-    "replicas": 1,
-    "template": {
-      "metadata": {
-        "labels": {
-          "app": "{{.NAME}}-{{.HASH}}"
-        },
-        "name": "{{.NAME}}-{{.HASH}}"
-      },
-      "spec": {
-        "containers": [
-          {
-            "env": [
-              {
-                "name": "GF_SECURITY_ADMIN_PASSWORD",
-                "value": "{{.PASSWORD}}"
-              }
-           ],
-            "image": "{{.IMAGE}}",
-            "name": "{{.NAME}}",
-            "resources": {
-              "requests": {
-                "cpu": "{{.CPU}}",
-                "memory": "{{.RAM}}"
-              }
-            },
-            "volumeMounts": [
-              {
-                "mountPath": "{{.DATA}}",
-                "name": "{{.VOLUME}}",
-                "subPath": "{{.NAME}}-{{.HASH}}/{{.DATA}}"
-              }
-            ]
-          }
-        ],
-        "volumes": [
-          {
-            "name": "{{.VOLUME}}"
-          }
-        ]
-      }
-    }
-  }
+	"containers": [{
+		"image": "{{.IMAGE}}",
+		"name": "{{.NAME}}-{{.HASH}}",
+		"limits": {
+			"cpu": {{.CPU}},
+			"memory": {{.RAM}}
+		},
+		"env": [{
+            	"name": "GF_SECURITY_ADMIN_PASSWORD",
+            	"value": "{{.PASSWORD}}"
+        	}
+		]
+	}],
+	"name": "{{.NAME}}-{{.HASH}}",
+	"replicas": 1
 }
