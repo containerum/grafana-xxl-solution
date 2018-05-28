@@ -1,21 +1,9 @@
 {
-    "kind": "Service",
-    "metadata": {
-        "labels": {
-            "external": "true",
-            "{{.NS_SELECTOR}}": "{{.NAME}}-{{.HASH}}"
-        },
-        "name": "{{.NAME}}-{{.HASH}}"
-    },
-    "spec": {
-        "selector": {
-            "{{.NS_SELECTOR}}": "{{.NAME}}-{{.HASH}}"
-        },
-        "ports": [
-            {
-                "protocol": "TCP",
-                "targetPort": {{.PORT}}
-            }
-        ]
-    }
+    "name": "{{.NAME}}-{{.HASH}}",
+    "deploy": "{{.NAME}}-{{.HASH}}",
+    "ports": [{
+        "name": "grafana",
+        "target_port": {{.PORT}},
+        "protocol": "TCP"
+        }]
 }
