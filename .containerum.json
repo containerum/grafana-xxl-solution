@@ -6,7 +6,7 @@
     "NAME": "solution-grafana",
     "SVC_NAME": "solution-grafana-svc",
     "DATA": "/var/lib/grafana",
-    "HASH": "{{rand_string 5}}",
+    "HASH": "{{rand_string_minus 5}}",
     "PASSWORD": "{{rand_string 8}}",
     "CPU": "500",
     "RAM": "500"
