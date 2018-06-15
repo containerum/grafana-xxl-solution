@@ -1,6 +1,6 @@
 {
-    "name": "{{.NAME}}-{{.HASH}}",
-    "deploy": "{{.NAME}}-{{.HASH}}",
+    "name": "{{.NAME}}{{.HASH}}",
+    "deploy": "{{.NAME}}{{.HASH}}",
     "ports": [{
         "name": "grafana",
         "target_port": {{.PORT}},
