@@ -8,8 +8,8 @@
     "DATA": "/var/lib/grafana",
     "HASH": "{{rand_string_minus 5}}",
     "PASSWORD": "{{rand_string 8}}",
-    "CPU": "500",
-    "RAM": "500"
+    "CPU": "100",
+    "RAM": "128"
   },
   "run":[
     {
