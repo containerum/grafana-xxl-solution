@@ -50,5 +50,3 @@ $ chkit get svc
 4. Go to `x3.containerum.io:37834`, using the default username `admin` and the password you entered in step 1.
 
 5. Create a dashboard and add the metrics you want to track.
-
-![](/gif/grafanasln.gif)
